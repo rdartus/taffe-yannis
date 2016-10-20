@@ -20,10 +20,12 @@ public class JavaApplication7 {
               System.out.println ("test");
               System.out.println ("testGitKraken");
 
-              
+
               
               Panneau test1 = new Panneau (1, 0.1);
-              
+
+//    MathOperation.energy_prod(test1, li);
+        
               test1.afficherPanneau();
               
 

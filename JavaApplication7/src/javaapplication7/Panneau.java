@@ -18,9 +18,23 @@ public class Panneau {
       this.rendementp=prendementp;
       this.surfacep=psurfacep;
     }
-    
-    
-      
+
+    public double getRendementp() {
+        return rendementp;
+    }
+
+    public void setRendementp(double rendementp) {
+        this.rendementp = rendementp;
+    }
+
+    public int getSurfacep() {
+        return surfacep;
+    }
+
+    public void setSurfacep(int surfacep) {
+        this.surfacep = surfacep;
+    }
+
     public void afficherPanneau (){
         
        System.out.println (rendementp);

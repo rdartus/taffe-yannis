@@ -13,11 +13,42 @@ public class Lieu {
   private int mirr;
   private int tempmin;
   private int tempmax;
-  private int tabirr [][]=new int [12][365]; 
-    
+  private int tabirr [][]=new int [12][365];
 
 
-  public Lieu (int pmirr)
+    public int getMirr() {
+        return mirr;
+    }
+
+    public void setMirr(int mirr) {
+        this.mirr = mirr;
+    }
+
+    public int getTempmin() {
+        return tempmin;
+    }
+
+    public void setTempmin(int tempmin) {
+        this.tempmin = tempmin;
+    }
+
+    public int getTempmax() {
+        return tempmax;
+    }
+
+    public void setTempmax(int tempmax) {
+        this.tempmax = tempmax;
+    }
+
+    public int[][] getTabirr() {
+        return tabirr;
+    }
+
+    public void setTabirr(int[][] tabirr) {
+        this.tabirr = tabirr;
+    }
+
+    public Lieu (int pmirr)
     {
       this.mirr=pmirr;
 
