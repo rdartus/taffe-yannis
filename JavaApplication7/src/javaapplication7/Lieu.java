@@ -14,6 +14,7 @@ public class Lieu {
   private int tempmin;
   private int tempmax;
  // private int tabirr [][]=new int [12][365];
+ //arraylist consommation h/h
   
    public Lieu (int pmirr)
     {

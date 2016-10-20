@@ -16,6 +16,8 @@ public class Panneau {
     private double coeffperte;
     private int prix;
     
+    //arraylist production h/h
+    
     public Panneau (int psurfacep, double prendementp,int ppuissance,double pcoeffperte,int pprix)
     {
       this.rendementp=prendementp;

@@ -5,7 +5,22 @@ package javaapplication7;
  */
 public class MathOperation {
     
+    /*
+    public static consostock (mes arraylist conso et prod){
+
+        soustraction heure par heure
+        on recup le surplus 
+        on le stock dans une variable a stocker
+        
+        on trouve le max journalier a stocker ?
+          
+        return a stocker;
+            
+      }
     
+    http://energie-developpement.blogspot.fr/2012/01/photovoltaique-batteries-capacite.html
+    
+    */
       public static double surface_installee_libre(double conso , double energieunpan, Panneau pan){
 
         double nbpan;
