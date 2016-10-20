@@ -18,6 +18,9 @@ public class JavaApplication7 {
         // TODO code application logic here
         
               System.out.println ("test");
+              System.out.println ("testGitKraken");
+
+              
               
               Panneau test1 = new Panneau (1, 0.1);
               
