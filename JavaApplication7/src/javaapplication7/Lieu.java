@@ -13,7 +13,13 @@ public class Lieu {
   private int mirr;
   private int tempmin;
   private int tempmax;
-  private int tabirr [][]=new int [12][365];
+ // private int tabirr [][]=new int [12][365];
+  
+   public Lieu (int pmirr)
+    {
+      this.mirr=pmirr;
+
+    }
 
 
     public int getMirr() {
@@ -40,19 +46,15 @@ public class Lieu {
         this.tempmax = tempmax;
     }
 
-    public int[][] getTabirr() {
+    /*public int[][] getTabirr() {
         return tabirr;
     }
 
     public void setTabirr(int[][] tabirr) {
         this.tabirr = tabirr;
     }
-
-    public Lieu (int pmirr)
-    {
-      this.mirr=pmirr;
-
-    }
+*/
+   
   
   
    public void afficherLieu (){
