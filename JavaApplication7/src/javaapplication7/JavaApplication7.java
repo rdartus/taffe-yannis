@@ -23,8 +23,13 @@ public class JavaApplication7 {
 
               
               Panneau test1 = new Panneau (1, 0.1);
+              Lieu li = new Lieu (1);
+              double eneprod;
 
-//    MathOperation.energy_prod(test1, li);
+System.out.println(MathOperation.energy_prod(test1, li));
+
+eneprod=MathOperation.energy_prod(test1, li);
+System.out.println(eneprod);
         
               test1.afficherPanneau();
               
