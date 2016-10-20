@@ -26,6 +26,7 @@ public class JavaApplication7 {
               Lieu li = new Lieu (200);
               Espace lisb = new Espace (20,10,10,10000);
               
+              
              
               double eneprod;
               double prix;
