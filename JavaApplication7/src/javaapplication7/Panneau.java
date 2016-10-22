@@ -4,6 +4,8 @@
  */
 package javaapplication7;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author CAUBET
@@ -15,16 +17,18 @@ public class Panneau {
     private int puissance;
     private double coeffperte;
     private int prix;
+    private ArrayList prodhh ;
     
     //arraylist production h/h
     
-    public Panneau (int psurfacep, double prendementp,int ppuissance,double pcoeffperte,int pprix)
+    public Panneau (int psurfacep, double prendementp,int ppuissance,double pcoeffperte,int pprix , ArrayList pprodhh)
     {
       this.rendementp=prendementp;
       this.surfacep=psurfacep;
       this.puissance=ppuissance;
       this.coeffperte=pcoeffperte;
       this.prix=pprix;
+      this.prodhh =pprodhh;
 
     }
 

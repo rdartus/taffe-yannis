@@ -10,7 +10,7 @@ package javaapplication7;
  */
 public class JavaApplication7 {
 
-    /**
+       /**
      * @param args the command line arguments
      */
     

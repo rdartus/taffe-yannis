@@ -1,5 +1,7 @@
 package javaapplication7;
 
+import java.util.ArrayList;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -15,14 +17,15 @@ public class Espace {
     private double inclinaison;
     private double orientation ;
     private int consommation;
+    private ArrayList consohh;
     
-      public Espace (int psurfacedispo , double pinclinaison, double porientation, int pconsommation)
+      public Espace (int psurfacedispo , double pinclinaison, double porientation, int pconsommation, ArrayList pconsohh)
     {
       this.surfacedispo=psurfacedispo;
       this.inclinaison=pinclinaison;
       this.orientation=porientation;
       this.consommation=pconsommation;
-           
+      this.consohh=pconsohh;     
       
     }
     ////////////////////////////////////////////

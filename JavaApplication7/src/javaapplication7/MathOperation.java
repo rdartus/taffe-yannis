@@ -1,26 +1,55 @@
 package javaapplication7;
 
+import java.util.ArrayList;
+
 /**
  * Created by Richard-DT on 20/10/2016.
  */
 public class MathOperation {
     
-    /*
-    public static consostock (mes arraylist conso et prod){
+        public static double consostock (ArrayList consoh, ArrayList prodh){
 
-        soustraction heure par heure
-        on recup le surplus 
-        on le stock dans une variable a stocker
+        double maxstock=0;
+        double jstock=0;
+        double totstock=0;
+        int i=0;
+        int j=0;
+        double prodj;
+        double consj;
         
-        on trouve le max journalier a stocker ?
+        for(i=0;i<365;i++){
+            for(j=j;j<j+24;j++){
+                if( (double)prodh.get(j) > (double)consoh.get(j) ){
+                    jstock = jstock + ((double)prodh.get(j) - (double)consoh.get(j)); 
+                }
+            }
+            if(jstock>maxstock){
+                maxstock=jstock;
+                jstock=0;
+            }
+            else{
+                jstock=0;
+            }    
+        }
           
-        return a stocker;
+        return maxstock;
             
       }
-    
+        
+      public static int nbBat (double maxstock, double decharge, int jautonomie, int tension, int capacite){
+          int nbBat;
+          nbBat = (int)Math.ceil(maxstock*decharge*jautonomie/(tension*capacite));
+          return nbBat;
+      }  
+      
+      public static double tarif(int nbBat, double prix){
+          double tarif = nbBat*prix;
+          return tarif;
+      }
+    /*
     http://energie-developpement.blogspot.fr/2012/01/photovoltaique-batteries-capacite.html
-    
     */
+    
       public static double surface_installee_libre(double conso , double energieunpan, Panneau pan){
 
         double nbpan;
