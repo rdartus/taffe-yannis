@@ -91,10 +91,9 @@ public class fcalcul extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-        int valeur;
-        valeur=jTextField1.getValue;
-               
-        
+        String valeur;
+        valeur=jTextField1.getText();
+         
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
