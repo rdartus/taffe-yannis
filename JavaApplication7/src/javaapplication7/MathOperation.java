@@ -91,4 +91,43 @@ public class MathOperation {
     }
     
     
+     public static double Autoprod (Panneau pan , double surfaceinstallee){
+
+      
+        
+        return pan.getPrix()*nbpanneaux;
+         
     }
+    
+     public static double Autoconso (Panneau pan , double surfaceinstallee){
+
+      
+        
+        return pan.getPrix()*nbpanneaux;
+         
+    }
+    
+     public static double GainEnv (double eneprod){
+         
+         double eco =0.476;
+         
+      
+        
+        return eneprod*eco;
+         
+    }
+    
+     public static double roi (double tarifbat , double prixpan, double prodan){
+         
+         
+         
+         double prixkwh=0.15;
+         
+      
+        
+        return (tarifbat+prixpan)/(prodan*prixkwh);
+         
+    }
+     
+    }
+
