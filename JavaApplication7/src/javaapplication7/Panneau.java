@@ -12,30 +12,30 @@ import java.util.ArrayList;
  */
 public class Panneau {
     
-    private int surfacep ;
+    private double surfacep ;
     private double rendementp ;
     private int puissance;
-    private double coeffperte;
     private int prix;
     private ArrayList prodhh ;
+    private String nom;
     
     //arraylist production h/h
     
-    public Panneau (int psurfacep, double prendementp,int ppuissance,double pcoeffperte,int pprix , ArrayList pprodhh)
+    public Panneau (double psurfacep, double prendementp,int ppuissance,int pprix , ArrayList pprodhh, String pnom)
     {
       this.rendementp=prendementp;
       this.surfacep=psurfacep;
       this.puissance=ppuissance;
-      this.coeffperte=pcoeffperte;
       this.prix=pprix;
       this.prodhh =pprodhh;
+      this.nom =pnom;
 
     }
 
     /////////////////////////////////////////
 
     public double getPrix() {
-        return coeffperte;
+        return prix;
     }
 
     public void setPrix(int prix) {
@@ -44,14 +44,14 @@ public class Panneau {
     ///////////////////////////////////
       
     
-     public double getCoeffperte() {
+   /*  public double getCoeffperte() {
         return coeffperte;
     }
 
     public void setCoeffperte(double coeffperte) {
         this.coeffperte = coeffperte;
     }         
-    
+    */
     ////////////////////////////////////////
     
      public int getPuissance() {
@@ -87,6 +87,12 @@ public class Panneau {
 
         
     }
+    
+    
+      public String getNom(){
+       return this.nom;
+   }
+  
 
 }
  

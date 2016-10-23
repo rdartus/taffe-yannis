@@ -7,10 +7,7 @@ package pFiche;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Iterator;
-import javaapplication7.Batterie;
-import javaapplication7.CsvReader;
-import javaapplication7.Lieu;
-import javaapplication7.Panneau;
+import javaapplication7.*;
 
 /**
  *
@@ -55,13 +52,16 @@ public class fEntree extends javax.swing.JFrame {
         jComboBox5 = new javax.swing.JComboBox();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -105,6 +105,11 @@ public class fEntree extends javax.swing.JFrame {
         });
 
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Gel", "AGM", "Tesla" }));
+        jComboBox3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox3ActionPerformed(evt);
+            }
+        });
 
         jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Nord ", "Sud", "Est", "Ouest" }));
 
@@ -112,51 +117,67 @@ public class fEntree extends javax.swing.JFrame {
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Boussole.png"))); // NOI18N
 
-        jLabel9.setText("surfacep  rendementp puissance  prix    ");
+        jLabel9.setText("*");
 
-        jLabel10.setText("adresse prod ArrayList prodhh ");
-
-        jLabel11.setText("adresse conso ArrayList conso ");
-
-        jLabel12.setText("adresse irr ArrayList irr ");
-
-        jLabel13.setText("capastock puissance  nbcycle  prix");
+        jLabel13.setText("*");
 
         jLabel15.setText("jLabel15");
 
         jLabel16.setText("jLabel16");
 
+        jLabel10.setText("*");
+
+        jLabel11.setText("*");
+
+        jLabel17.setText("*");
+
+        jLabel12.setText("*");
+
+        jLabel21.setText("*");
+
+        jLabel22.setText("*");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel14)))
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel10))
-                        .addGap(10, 10, 10)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel3)
+                                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel14)))
+                                    .addComponent(jLabel1)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel9)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel17)))
+                                .addGap(10, 10, 10)
                                 .addComponent(jLabel4)
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel5)
                                     .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel15)))
-                            .addComponent(jLabel11)
-                            .addComponent(jLabel12))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel8)
+                                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel10)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel11)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -170,16 +191,16 @@ public class fEntree extends javax.swing.JFrame {
                                             .addComponent(jLabel16))
                                         .addGap(0, 53, Short.MAX_VALUE))))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel13)
-                                .addGap(0, 0, Short.MAX_VALUE))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel8)
-                                .addGap(33, 33, 33)
-                                .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel13)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel12))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel21)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel22)))
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -210,17 +231,19 @@ public class fEntree extends javax.swing.JFrame {
                         .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel14)))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel9)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel12)
-                        .addComponent(jLabel13)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel17)
+                    .addComponent(jLabel12))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(jLabel11))
-                .addGap(18, 18, 18)
+                    .addComponent(jLabel11)
+                    .addComponent(jLabel21)
+                    .addComponent(jLabel22))
+                .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel8)
@@ -239,12 +262,26 @@ public class fEntree extends javax.swing.JFrame {
         switch (jComboBox1.getSelectedItem().toString()) {
             case "Poly":
                 jLabel14.setText("Blabla Poly c la vi");
+                jLabel9.setText("Surface");
+                jLabel10.setText("Rendement");
+                jLabel11.setText("Puissance");
+                jLabel17.setText("Prix");
+             
                 break;
             case "Mono":
                 jLabel14.setText("Blabla Mono c la vi");
+                jLabel14.setText("Blabla Poly c la vi");
+                jLabel9.setText("Surface");
+                jLabel10.setText("Rendement");
+                jLabel11.setText("Puissance");
+                jLabel17.setText("Prix");
                 break;
             case "Amorphe":
                 jLabel14.setText("Blabla Amorphe c la vi");
+                 jLabel9.setText("Surface");
+                jLabel10.setText("Rendement");
+                jLabel11.setText("Puissance");
+                jLabel12.setText("Prix");
                 break;
         }
     }//GEN-LAST:event_jComboBox1ActionPerformed
@@ -259,31 +296,104 @@ public class fEntree extends javax.swing.JFrame {
         // Récupérer les valeurs de chacune des combobox
         String module = jComboBox1.getSelectedItem().toString();
         String lieu = jComboBox2.getSelectedItem().toString();
+        String batterie = jComboBox3.getSelectedItem().toString();
+        String orientation = jComboBox4.getSelectedItem().toString();
+        String inclinaison = jComboBox5.getSelectedItem().toString();
 
+
+        
+        
+        
         // Analyser l'entrée utilisateur pour chacune des combobox
         // Selon le résultat, trouver l'obJET jAVA correspondant
         Lieu lieuEntre = getLieuParNom(lieu);
         // faire pareil pour Batterie & Panneau
-        // Batterie batterieEntree = getBatterieParNom(batterie)
-        // Batterie batterieEntree = getPanneauParNom(batterie)
+        Batterie batterieEntree = getBatterieParNom(batterie);
+        Panneau panneauEntree = getPanneauParNom(module);
         
        // puis appeler la fonction mathématique :
-        // calculerResultat(lieuEntre, batterieEntree, panneauEntre)
-
+        // calculerResultat(lieuEntre, batterieEntree, panneauEntre, int inclination, int nord);
+        
+        //MathOperation calcul = new MathOperation();
+        //calcul.calculerGain(lieuEntre, panneauEntree);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
-        // TODO add your handling code here:
+         switch (jComboBox2.getSelectedItem().toString()) {
+            case "Paris":
+                jLabel15.setText("Blabla Paris c la vi");
+                break;
+            case "Lisbonne":
+                jLabel15.setText("Blabla Lisbonne c la vi");
+                break;
+            
+        }// TODO add your handling code here:
     }//GEN-LAST:event_jComboBox2ActionPerformed
+
+    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
+ switch (jComboBox3.getSelectedItem().toString()) {
+            case "GEL":
+                jLabel16.setText("Blabla GEL c la vi");
+                 jLabel12.setText("Capa");
+                jLabel13.setText("Voltage");
+                jLabel21.setText("Nb cycles");
+                jLabel22.setText("Prix");
+                break;
+            case "AGM":
+                jLabel16.setText("Blabla AGM c la vi");
+                 jLabel12.setText("Capa");
+                jLabel13.setText("Voltage");
+                jLabel21.setText("Nb cycles");
+                jLabel22.setText("Prix");
+                break;
+            case "TESLA":
+                jLabel16.setText("Blabla TESLA c la vi");
+                 jLabel12.setText("Capa");
+                jLabel13.setText("Voltage");
+                jLabel21.setText("Nb cycles");
+                jLabel22.setText("Prix");
+                break;
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox3ActionPerformed
 
     public void initialiserVariables() {
         // Code ci-dessous : à répéter pour chacun des lieux à ajouter
         ArrayList<ArrayList> listeIrrh = CsvReader.main("Irrh.csv");
-        Lieu tempLieu = new Lieu(5, "lisbonne", 30, 40);
+        Lieu tempLieu = new Lieu(5, "lisbonne", 30, 40, null);
         tempLieu.setIrrh(listeIrrh);
         listeLieux.add(tempLieu);
         // idem pour les batteries et les panneaux (créer le constructeur de Panneau et Batterie s'il existe pas)
+  
+        // Code ci-dessous : à répéter pour chacun des Panneaux à ajouter
+        
+        
+        Panneau tempPan = new Panneau(1.68,15.5,260,239,null,"Poly");
+        listePanneaux.add(tempPan);
+        
+        Panneau tempPan2 = new Panneau(1.61,17.1,280,268,null,"Mono");
+        listePanneaux.add(tempPan);
+        
+        
+        Panneau tempPan3 = new Panneau(0.79,8,50,45,null,"Amorphe");
+        listePanneaux.add(tempPan);
+        
+         // Code ci-dessous : à répéter pour chacun des Batteries à ajouter
+        Batterie tempBat = new Batterie(20,350,5000,2700,"TESLA");
+        listeBatteries.add(tempBat);
+        
+        Batterie tempBat2 = new Batterie(230,12,600,527,"AGM");
+        listeBatteries.add(tempBat);
+        
+        Batterie tempBat3 = new Batterie(220,12,2500,549,"GEL");
+        listeBatteries.add(tempBat);
+        
+              
+         // Code ci-dessous : à répéter pour chacun des espace à ajouter
+        ArrayList<ArrayList> listeConso = CsvReader.main("consoh.csv");
+        Espace tempEsp = new Espace(1,2.0,3.0,4,null);
 
+        
+        
     }
 
     public Lieu getLieuParNom(String nom) {
@@ -304,6 +414,20 @@ public class fEntree extends javax.swing.JFrame {
 
         while (it.hasNext()) {
             Batterie tempo = it.next();
+            if (tempo.getNom().equals(nom)) {
+                return tempo;
+            }
+        }
+
+        return null;
+    }
+      
+      
+        public Panneau getPanneauParNom(String nom) {
+        Iterator<Panneau> it = listePanneaux.iterator();
+
+        while (it.hasNext()) {
+            Panneau tempo = it.next();
             if (tempo.getNom().equals(nom)) {
                 return tempo;
             }
@@ -371,7 +495,10 @@ public class fEntree extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

@@ -73,12 +73,51 @@ public class MathOperation {
          
     }
      
-   public static double coefperte(Panneau pan,int or, int inc, double tabor[][],double tabinc[][]){
+   public static double coefperte(Espace maiz){
         
-      double coeffi= tabinc[inc][1];
-      double coeffo= tabor[or][1];
-
-       return coeffo*coeffi;
+     /* double coeffi= tabinc[inc][1];
+      double coeffo= tabor[or][1];*/
+       double coeffi=0;
+       double coeffo=0;
+       double resultat;
+       
+       if (maiz.getOrientation()==1)
+       {
+       coeffo=1;            }
+       else if(maiz.getOrientation()==2)
+       {
+           coeffo=0.8;
+       }
+       else if(maiz.getOrientation()==3)
+       {
+           coeffo=0.7;
+       }
+else if(maiz.getOrientation()==4)
+       {
+           coeffo=0.5;
+       }
+       
+       //
+       
+        if (maiz.getInclinaison()==1)
+       {
+       coeffi=1;            }
+       else if(maiz.getInclinaison()==2)
+       {
+           coeffi=0.8;
+       }
+       else if(maiz.getInclinaison()==3)
+       {
+           coeffi=0.7;
+       }
+       else if(maiz.getInclinaison()==4)
+       {
+           coeffi=0.5;
+       }
+       
+        resultat=coeffo*coeffi;
+        
+       return resultat ;
     }   
      
     public static double energy_prod(Panneau pan , Lieu li){

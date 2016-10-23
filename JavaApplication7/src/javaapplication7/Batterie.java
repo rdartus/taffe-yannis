@@ -16,12 +16,13 @@ public class Batterie {
     private int prix;
     private String nom;
     
-      public Batterie (int pcapastock , double ppuissance, int pnbcycle, int pprix)
+      public Batterie (int pcapastock , double ppuissance, int pnbcycle, int pprix, String pnom)
     {
       this.capastock=pcapastock;
       this.puissance=ppuissance;
       this.nbcycle=pnbcycle;
       this.prix=pprix;
+      this.nom=pnom;
            
       
     }

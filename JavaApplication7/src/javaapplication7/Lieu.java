@@ -22,12 +22,13 @@ public class Lieu {
   private ArrayList Irrhh ;
   
   
-  public Lieu (int mirr, String nom, int tempmin, int tempmax)
+  public Lieu (int mirr, String nom, int tempmin, int tempmax, ArrayList pIrrhh)
     {
       this.mirr = mirr;
       this.nom = nom;
       this.tempmin = tempmin;
       this.tempmax = tempmax;
+      this.Irrhh = pIrrhh;
 
     }
  
