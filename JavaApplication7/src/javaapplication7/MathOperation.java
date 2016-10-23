@@ -58,6 +58,13 @@ public class MathOperation {
         return nbpan*pan.getSurfacep();
             
       }
+      
+      public static double calculerGain(Lieu lieu, Panneau panneau){
+          int mirr = lieu.getMirr();
+          double coeff = panneau.getCoeffperte();
+          double resultat = mirr*coeff;
+          return resultat;
+      }
     
     
      public static double surface_installee(Espace maison , Panneau pan){

@@ -14,6 +14,7 @@ import java.util.ArrayList;
 public class Lieu {
     
   private int mirr;
+  private String nom;
   private int tempmin;
   private int tempmax;
  // private int tabirr [][]=new int [12][365];
@@ -21,9 +22,12 @@ public class Lieu {
   private ArrayList Irrhh ;
   
   
-  public Lieu (ArrayList pIrrhh)
+  public Lieu (int mirr, String nom, int tempmin, int tempmax)
     {
-      this.Irrhh=pIrrhh;
+      this.mirr = mirr;
+      this.nom = nom;
+      this.tempmin = tempmin;
+      this.tempmax = tempmax;
 
     }
  
@@ -89,6 +93,10 @@ public class Lieu {
        System.out.println (mirr);
        
     }
+   
+   public String getNom(){
+       return this.nom;
+   }
   
   
   

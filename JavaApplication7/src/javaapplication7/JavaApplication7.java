@@ -69,8 +69,8 @@ maiz.setConsoh(arrayTest);
         
  double maxstock;
  
- maxstock= MathOperation.consostock(arrayTest, arrayTest2);
- System.out.println(maxstock) ;
+ // maxstock= MathOperation.consostock(arrayTest, arrayTest2);
+ // System.out.println(maxstock) ;
         
         
         

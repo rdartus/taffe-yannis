@@ -5,12 +5,20 @@
 package pFiche;
 
 import java.awt.Color;
+import java.util.ArrayList;
+import java.util.Iterator;
+import javaapplication7.Batterie;
+import javaapplication7.CsvReader;
+import javaapplication7.Lieu;
+import javaapplication7.Panneau;
 
 /**
  *
  * @author CAUBET
  */
 public class fAccueil extends javax.swing.JFrame {
+    
+
 
     /**
      * Creates new form fAccueil
@@ -18,6 +26,7 @@ public class fAccueil extends javax.swing.JFrame {
     public fAccueil() {
         initComponents();
 this.getContentPane().setBackground(Color.WHITE);
+
 
     }
 
@@ -126,6 +135,11 @@ this.getContentPane().setBackground(Color.WHITE);
             }
         });
     }
+    
+  
+    
+
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;

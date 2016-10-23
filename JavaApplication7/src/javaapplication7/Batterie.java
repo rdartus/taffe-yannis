@@ -14,6 +14,7 @@ public class Batterie {
     private double puissance;
     private int nbcycle ;
     private int prix;
+    private String nom;
     
       public Batterie (int pcapastock , double ppuissance, int pnbcycle, int pprix)
     {
@@ -42,4 +43,8 @@ public class Batterie {
       public int getprix() {
         return prix;
     }
+      
+      public String getNom(){
+          return this.nom;
+      }
 }
