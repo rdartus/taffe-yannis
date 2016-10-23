@@ -1,4 +1,5 @@
-Panneau;Prix;Rendement
-poly;52;25%
-mono;61;25%
-amorphe;54;25%
+Heure;Conso;
+1;1000;
+2;1200;
+3;1500;
+4;1300;
