@@ -36,14 +36,57 @@ public class MathOperation {
             
       }
         
-      public static int nbBat (double maxstock, double decharge, int jautonomie, int tension, int capacite){
+         public static double consotot (ArrayList consoh){
+          
+             double consotot = 0;
+             int j;
+             
+             for(j=1;j<8760;j++){
+                 consotot = consotot + (double)consoh.get(j); 
+                }
+             
+          return consotot;
+      }  
+      
+        
+         public static ArrayList prodhh (Panneau pan, ArrayList prodh, ArrayList Irrh, double coefperte){
+          
+             int cst =24;
+             int j;
+             
+             for(j=1;j<8760;j++){
+                prodh.get(j)  = (double )Irrh.get(j) * pan.getRendementp() *pan.getSurfacep()*cst*coefperte; 
+                }
+             
+             return prodh;
+      }  
+         
+           public static double prodtot (ArrayList prodhh){
+         
+          int j;
+          double prodtot=0;
+          
+           for(j=1;j<8760;j++){
+                 prodtot = prodtot + (double)prodhh.get(j); 
+                }
+          
+          return prodtot ;
+      }  
+        
+      public static int nbBat (double maxstock, Batterie bat ){
           int nbBat;
-          nbBat = (int)Math.ceil(maxstock*decharge*jautonomie/(tension*capacite));
+          double decharge =0.5;
+          int jautonomie = 2; // a mettre en variable si possible
+          
+          //double decharge, int jautonomie, int tension, int capacite
+          
+          nbBat = (int)Math.ceil(maxstock*decharge*jautonomie/(bat.getpuissance()*bat.getcapastock()));
           return nbBat;
       }  
       
-      public static double tarif(int nbBat, double prix){
-          double tarif = nbBat*prix;
+      public static double tarif(int nbBat, Batterie bat){
+         
+          double tarif = nbBat*bat.getprix();
           return tarif;
       }
     /*
@@ -147,18 +190,19 @@ else if(maiz.getOrientation()==4)
     }
     
     
-   /* 
-     public static double Autoprod (Panneau pan , double surfaceinstallee){ 
+   
+     public static double Autoprod (double eneprodtot , double consotot){ 
  
-       
+double resultat;
+resultat = eneprodtot/consotot;
          
-        return pan.getPrix()*nbpanneaux; 
+        return resultat; 
           
     } 
-     
+     /* 
      public static double Autoconso (Panneau pan , double surfaceinstallee){ 
  
-       
+       prod consommée / prod tot
          
         return pan.getPrix()*nbpanneaux; 
           

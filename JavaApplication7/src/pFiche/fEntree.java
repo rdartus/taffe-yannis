@@ -21,6 +21,7 @@ public class fEntree extends javax.swing.JFrame {
     public ArrayList<Lieu> listeLieux = new ArrayList<>();
     public ArrayList<Panneau> listePanneaux = new ArrayList<>();
     public ArrayList<Batterie> listeBatteries = new ArrayList<>();
+    public ArrayList<Espace> listeEspaces = new ArrayList<>();
 
     public fEntree() {
         initComponents();
@@ -312,8 +313,45 @@ public class fEntree extends javax.swing.JFrame {
         // faire pareil pour Batterie & Panneau
         Batterie batterieEntree = getBatterieParNom(batterie);
         Panneau panneauEntree = getPanneauParNom(module);
+        Espace maizEntree = listeEspaces.get(1);//????????????????????
         
        // puis appeler la fonction mathématique :
+        double consotot;
+        consotot = MathOperation.consotot(listeLieux);//param : Espace.consohh
+        double coefperte;
+        coefperte=MathOperation.coefperte(maizEntree);//param : espace maiz
+        double energieprodpan;
+        energieprodpan=MathOperation.energy_prod(panneauEntree, lieuEntre, maizEntree);//pan li maiz
+        double surfacelibre;
+        surfacelibre=MathOperation.surface_installee_libre(consotot, energieprodpan, panneauEntree);
+        double surface;
+        surface=MathOperation.surface_installee(maizEntree, panneauEntree); //null=maiz
+        if (surfacelibre < maizEntree.getSurfacedispo()){ //pour ne pas surdim
+            surface = surfacelibre;
+        }
+        else {
+    }
+       // panneauEntree.arrayprod=MathOperation.prodhh              calcul prodhh
+        
+        double prodtot;
+        prodtot=MathOperation.prodtot(listeLieux); 
+        
+        ArrayList consostock ;
+        
+        //consostock=MathOperation.consostock( consohh,prodhh);
+        
+        int nbbat;
+        nbbat=MathOperation.nbBat(prodtot, batterieEntree);
+        double gainEnv;
+        gainEnv=MathOperation.GainEnv(prodtot);
+        double gainkwh;
+        gainkwh=MathOperation.calculerGain(prodtot);
+        double tarifbat;
+        tarifbat=MathOperation.tarif(nbbat, batterieEntree);
+        double autoprod;
+        autoprod = MathOperation.Autoprod(prodtot, consotot);
+        double autoconso;
+        autoconso=1;
         
         
         
@@ -364,7 +402,7 @@ public class fEntree extends javax.swing.JFrame {
     public void initialiserVariables() {
         // Code ci-dessous : à répéter pour chacun des lieux à ajouter
         ArrayList<ArrayList> listeIrrh = CsvReader.main("Irrh.csv");
-        Lieu tempLieu = new Lieu(163, "lisbonne", 30, 40, null);
+        Lieu tempLieu = new Lieu(147, "lisbonne", 30, 40, null);
         tempLieu.setIrrh(listeIrrh);
         listeLieux.add(tempLieu);
         // idem pour les batteries et les panneaux (créer le constructeur de Panneau et Batterie s'il existe pas)
@@ -396,6 +434,7 @@ public class fEntree extends javax.swing.JFrame {
          // Code ci-dessous : à répéter pour chacun des espace à ajouter
         ArrayList<ArrayList> listeConso = CsvReader.main("consoh.csv");
         Espace tempEsp = new Espace(1,2.0,3.0,4,null);
+        listeEspaces.add(tempEsp);
 
         
         
