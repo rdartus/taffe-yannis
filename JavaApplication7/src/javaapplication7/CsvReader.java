@@ -11,11 +11,12 @@ import java.util.ArrayList;
  * Created by Richard-DT on 23/10/2016.
  */
 public class CsvReader {
-    public static void main(String[] args) {
+    public static ArrayList main(String nomFichier) {
 
         ArrayList<ArrayList> alContainer = new ArrayList<>();
         ArrayList<String> alLine = new ArrayList<>();
-        String csvFile = "\\src\\Data\\consoh.csv";
+//        String csvFile = "\\src\\Data\\consoh.csv";
+        String csvFile = "\\src\\Data\\"+nomFichier;
         String line = "";
         String path ="";
         String cvsSplitBy = ";";
@@ -43,13 +44,14 @@ public class CsvReader {
                 alContainer.add(alLine);
             }
 
-            for (ArrayList<String> als:alContainer) {
-                for (String str :
-                        als) {
-                    System.out.println("args = [" + str + "]");
-                }
-
-            }
+            return alContainer;
+//            for (ArrayList<String> als:alContainer) {
+//                for (String str :
+//                        als) {
+//                    System.out.println("args = [" + str + "]");
+//                }
+//
+//            }
 
         } catch (IOException e) {
             e.printStackTrace();
