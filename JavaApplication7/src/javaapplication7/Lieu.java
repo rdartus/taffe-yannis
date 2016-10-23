@@ -1,3 +1,4 @@
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -16,14 +17,37 @@ public class Lieu {
   private int tempmin;
   private int tempmax;
  // private int tabirr [][]=new int [12][365];
+ //arraylist consommation h/
   private ArrayList Irrhh ;
   
-   public Lieu (int pmirr)
+  
+  public Lieu (ArrayList pIrrhh)
     {
-      this.mirr=pmirr;
+      this.Irrhh=pIrrhh;
 
     }
+ 
+  public void setIrrh(ArrayList<ArrayList> grandeArrayList){
+      
+      String value ;
+      int i;
+      
+      for (i=1; i<grandeArrayList.size(); i++)
+      {
+            
+          ArrayList<String> alLigne = grandeArrayList.get(i);
+          System.out.println(alLigne.get(1));
+          Irrhh.add(Integer.valueOf(alLigne.get(1)));
+     
+      
+      }
 
+      
+      
+  }
+  
+   
+  
 
     public int getMirr() {
         return mirr;
@@ -69,3 +93,4 @@ public class Lieu {
   
   
 }
+

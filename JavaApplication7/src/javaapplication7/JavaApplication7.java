@@ -25,34 +25,35 @@ public class JavaApplication7 {
 
               
               Panneau test1 = new Panneau (2,0.15,200,0.2,500,new ArrayList());
-              Lieu li = new Lieu (200);
-              Espace lisb = new Espace (20,10,10,10000, new ArrayList());
+              Lieu lisb = new Lieu (new ArrayList());
+              Espace maiz = new Espace (20,10,10,10000, new ArrayList());
               
-              
+ /*             
              
               double eneprod;
               double prix;
               double surfaceinst;
                       
               test1.afficherPanneau();
-              li.afficherLieu();
+              lisb.afficherLieu();
               
 
 
-eneprod=MathOperation.energy_prod(test1, li);
+eneprod=MathOperation.energy_prod(test1, lisb);
 System.out.println("eneprod"+eneprod);
 
-surfaceinst=MathOperation.surface_installee(lisb,test1);
+surfaceinst=MathOperation.surface_installee(maiz,test1);
 System.out.println("surfaceinst"+surfaceinst);
 
 
 prix=MathOperation.prix_panneaux(test1, surfaceinst);
 System.out.println("prix"+prix);
-        
+       */ 
 
-ArrayList arrayTest = CsvReader.main("consoh.csv");
-              
-for (ArrayList<String> als:alContainer) {
+ArrayList<ArrayList> arrayTest = CsvReader.main("consoh.csv");
+ArrayList<ArrayList> arrayTest2 = CsvReader.main("Irrh.csv");
+
+for (ArrayList<String> als:arrayTest) {
                 for (String str :
                         als) {
                     System.out.println("args = [" + str + "]");
@@ -62,10 +63,14 @@ for (ArrayList<String> als:alContainer) {
     //fichier csv interraction excel java
               
 
-       
+lisb.setIrrh(arrayTest2);
+maiz.setConsoh(arrayTest);
+   
         
-               
-
+ double maxstock;
+ 
+ maxstock= MathOperation.consostock(arrayTest, arrayTest2);
+ System.out.println(maxstock) ;
         
         
         

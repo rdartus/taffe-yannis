@@ -75,7 +75,11 @@ public class MathOperation {
     }   
      
     public static double energy_prod(Panneau pan , Lieu li){
+        
+        
         int cst = 24;
+        //faire calcul pour remplir arraylist prod
+        
         return pan.getRendementp() * pan.getSurfacep() * li.getMirr() * cst*pan.getCoeffperte();
     }
         
@@ -91,43 +95,45 @@ public class MathOperation {
     }
     
     
-     public static double Autoprod (Panneau pan , double surfaceinstallee){
-
-      
-        
-        return pan.getPrix()*nbpanneaux;
+   /* 
+     public static double Autoprod (Panneau pan , double surfaceinstallee){ 
+ 
+       
          
-    }
-    
-     public static double Autoconso (Panneau pan , double surfaceinstallee){
-
-      
-        
-        return pan.getPrix()*nbpanneaux;
-         
-    }
-    
-     public static double GainEnv (double eneprod){
-         
-         double eco =0.476;
-         
-      
-        
-        return eneprod*eco;
-         
-    }
-    
-     public static double roi (double tarifbat , double prixpan, double prodan){
-         
-         
-         
-         double prixkwh=0.15;
-         
-      
-        
-        return (tarifbat+prixpan)/(prodan*prixkwh);
-         
-    }
+        return pan.getPrix()*nbpanneaux; 
+          
+    } 
      
-    }
-
+     public static double Autoconso (Panneau pan , double surfaceinstallee){ 
+ 
+       
+         
+        return pan.getPrix()*nbpanneaux; 
+          
+    } 
+     */
+     public static double GainEnv (double eneprod){ 
+          
+         double eco =0.476; 
+          
+       
+         
+        return eneprod*eco; 
+          
+    } 
+     
+     public static double roi (double tarifbat , double prixpan, double prodan){ 
+          
+          
+          
+         double prixkwh=0.15; 
+          
+         
+       
+         
+        return (tarifbat+prixpan)/(prodan*prixkwh); 
+          
+    } 
+      
+    } 
+ 

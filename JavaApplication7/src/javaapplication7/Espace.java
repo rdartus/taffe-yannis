@@ -28,6 +28,27 @@ public class Espace {
       this.consohh=pconsohh;     
       
     }
+      
+       public void setConsoh(ArrayList<ArrayList> grandeArrayList){
+      
+      String value ;
+      int i;
+      
+      for (i=1; i<grandeArrayList.size(); i++)
+      {
+            
+          ArrayList<String> alLigne = grandeArrayList.get(i);
+          System.out.println(alLigne.get(1));
+          consohh.add(Integer.valueOf(alLigne.get(1)));
+     
+      
+      }
+
+      
+      
+  }
+  
+      
     ////////////////////////////////////////////
          public int getSurfacedispo() {
         return surfacedispo;
