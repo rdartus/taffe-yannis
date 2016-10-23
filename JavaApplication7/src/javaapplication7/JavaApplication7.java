@@ -4,6 +4,8 @@
  */
 package javaapplication7;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author CAUBET
@@ -22,9 +24,9 @@ public class JavaApplication7 {
 
 
               
-              Panneau test1 = new Panneau (2,0.15,200,0.2,500);
+              Panneau test1 = new Panneau (2,0.15,200,0.2,500,new ArrayList());
               Lieu li = new Lieu (200);
-              Espace lisb = new Espace (20,10,10,10000);
+              Espace lisb = new Espace (20,10,10,10000, new ArrayList());
               
               
              

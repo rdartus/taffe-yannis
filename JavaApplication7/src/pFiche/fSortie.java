@@ -204,19 +204,19 @@ this.setVisible(false);
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
        
 
-
-    DefaultPieDataset pieDataset = new DefaultPieDataset();
-    pieDataset.setValue("One", new Integer(10));
-    pieDataset.setValue("Two", new Integer(20));
-    pieDataset.setValue("Three", new Integer(30));
-    pieDataset.setValue("Four", new Integer(10));
-    pieDataset.setValue("Five", new Integer(20));
-    pieDataset.setValue("Six", new Integer(10));
-    JFreeChart chart = ChartFactory.createPieChart3D("3D Pie Chart", pieDataset, true, true, true);
-    PiePlot P=(PiePlot)chart.getPlot;
-    ChartFrame= new CharteFrame("Pie chart", chart);
-    frame.setVisible(true);
-    frame.setSize(200,200);
+//
+//    DefaultPieDataset pieDataset = new DefaultPieDataset();
+//    pieDataset.setValue("One", new Integer(10));
+//    pieDataset.setValue("Two", new Integer(20));
+//    pieDataset.setValue("Three", new Integer(30));
+//    pieDataset.setValue("Four", new Integer(10));
+//    pieDataset.setValue("Five", new Integer(20));
+//    pieDataset.setValue("Six", new Integer(10));
+//    JFreeChart chart = ChartFactory.createPieChart3D("3D Pie Chart", pieDataset, true, true, true);
+//    PiePlot P=(PiePlot)chart.getPlot;
+//    ChartFrame= new CharteFrame("Pie chart", chart);
+//    frame.setVisible(true);
+//    frame.setSize(200,200);
         
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
