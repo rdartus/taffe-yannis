@@ -49,8 +49,15 @@ System.out.println("surfaceinst"+surfaceinst);
 prix=MathOperation.prix_panneaux(test1, surfaceinst);
 System.out.println("prix"+prix);
         
-              
 
+ArrayList arrayTest = CsvReader.main("consoh.csv");
+              
+for (ArrayList<String> als:alContainer) {
+                for (String str :
+                        als) {
+                    System.out.println("args = [" + str + "]");
+                }
+            }
     //faire un arraylist 
     //fichier csv interraction excel java
               
