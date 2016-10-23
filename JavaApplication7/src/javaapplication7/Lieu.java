@@ -4,6 +4,8 @@
  */
 package javaapplication7;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author CAUBET
@@ -14,7 +16,7 @@ public class Lieu {
   private int tempmin;
   private int tempmax;
  // private int tabirr [][]=new int [12][365];
- //arraylist consommation h/h
+  private ArrayList Irrhh ;
   
    public Lieu (int pmirr)
     {
