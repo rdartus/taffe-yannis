@@ -1,8 +1,10 @@
 package javaapplication7;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 
 
 /**
@@ -11,17 +13,41 @@ import java.io.IOException;
 public class CsvReader {
     public static void main(String[] args) {
 
-        String csvFile = "/Data/auto.csv";
+        ArrayList<ArrayList> alContainer = new ArrayList<>();
+        ArrayList<String> alLine = new ArrayList<>();
+        String csvFile = "\\src\\Data\\consoh.csv";
         String line = "";
-        String cvsSplitBy = ",";
-
-        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+        String path ="";
+        String cvsSplitBy = ";";
+        try {
+            path = new File(".").getCanonicalPath();
+            System.out.println(path);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+//        String[] pathTab = path.split("\\\\");
+//        path = "";
+//        for (int i =0 ; i<pathTab.length ; i++){
+//            path += pathTab[i] +"\\";
+//        }
+        path += csvFile;
+        try (BufferedReader br = new BufferedReader(new FileReader(path))) {
 
             while ((line = br.readLine()) != null) {
-
                 // use comma as separator
                 String[] tab = line.split(cvsSplitBy);
-                System.out.println("args = [" + tab + "]");
+                alLine =new ArrayList<>();
+                for (String str: tab) {
+                    alLine.add(str);
+                }
+                alContainer.add(alLine);
+            }
+
+            for (ArrayList<String> als:alContainer) {
+                for (String str :
+                        als) {
+                    System.out.println("args = [" + str + "]");
+                }
 
             }
 
