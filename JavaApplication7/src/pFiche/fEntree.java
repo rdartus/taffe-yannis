@@ -104,7 +104,7 @@ public class fEntree extends javax.swing.JFrame {
             }
         });
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Gel", "AGM", "Tesla" }));
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "GEL", "AGM", "TESLA" }));
         jComboBox3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox3ActionPerformed(evt);
@@ -121,9 +121,11 @@ public class fEntree extends javax.swing.JFrame {
 
         jLabel13.setText("*");
 
-        jLabel15.setText("jLabel15");
+        jLabel14.setText("*");
 
-        jLabel16.setText("jLabel16");
+        jLabel15.setText("*");
+
+        jLabel16.setText("*");
 
         jLabel10.setText("*");
 
@@ -312,6 +314,9 @@ public class fEntree extends javax.swing.JFrame {
         Panneau panneauEntree = getPanneauParNom(module);
         
        // puis appeler la fonction mathématique :
+        
+        
+        
         // calculerResultat(lieuEntre, batterieEntree, panneauEntre, int inclination, int nord);
         
         //MathOperation calcul = new MathOperation();
@@ -359,7 +364,7 @@ public class fEntree extends javax.swing.JFrame {
     public void initialiserVariables() {
         // Code ci-dessous : à répéter pour chacun des lieux à ajouter
         ArrayList<ArrayList> listeIrrh = CsvReader.main("Irrh.csv");
-        Lieu tempLieu = new Lieu(5, "lisbonne", 30, 40, null);
+        Lieu tempLieu = new Lieu(163, "lisbonne", 30, 40, null);
         tempLieu.setIrrh(listeIrrh);
         listeLieux.add(tempLieu);
         // idem pour les batteries et les panneaux (créer le constructeur de Panneau et Batterie s'il existe pas)

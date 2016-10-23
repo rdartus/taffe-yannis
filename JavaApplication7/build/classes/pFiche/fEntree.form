@@ -263,9 +263,9 @@
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="3">
-            <StringItem index="0" value="Gel"/>
+            <StringItem index="0" value="GEL"/>
             <StringItem index="1" value="AGM"/>
-            <StringItem index="2" value="Tesla"/>
+            <StringItem index="2" value="TESLA"/>
           </StringArray>
         </Property>
       </Properties>
@@ -315,15 +315,18 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel14">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="*"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel15">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel15"/>
+        <Property name="text" type="java.lang.String" value="*"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel16">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel16"/>
+        <Property name="text" type="java.lang.String" value="*"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel10">

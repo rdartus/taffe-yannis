@@ -59,10 +59,13 @@ public class MathOperation {
             
       }
       
-      public static double calculerGain(Lieu lieu, Panneau panneau){
-          int mirr = lieu.getMirr();
-          double coeff = panneau.getCoeffperte();
-          double resultat = mirr*coeff;
+      public static double calculerGain(double eneprod){
+          
+          double prixkwh =0.15; 
+          double resultat;
+          
+          resultat = eneprod *prixkwh;
+                
           return resultat;
       }
     
@@ -120,13 +123,16 @@ else if(maiz.getOrientation()==4)
        return resultat ;
     }   
      
-    public static double energy_prod(Panneau pan , Lieu li){
+    public static double energy_prod(Panneau pan , Lieu li, Espace maiz ){
         
         
         int cst = 24;
+        double coefperte;
+        coefperte=MathOperation.coefperte(maiz);
+                
         //faire calcul pour remplir arraylist prod
         
-        return pan.getRendementp() * pan.getSurfacep() * li.getMirr() * cst*pan.getCoeffperte();
+        return pan.getRendementp() * pan.getSurfacep() * li.getMirr() * cst*coefperte;
     }
         
         

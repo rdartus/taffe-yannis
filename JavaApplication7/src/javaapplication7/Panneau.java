@@ -72,7 +72,7 @@ public class Panneau {
         this.rendementp = rendementp;
     }
 ///////////////////////////////////////////////
-    public int getSurfacep() {
+    public double getSurfacep() {
         return surfacep;
     }
 
