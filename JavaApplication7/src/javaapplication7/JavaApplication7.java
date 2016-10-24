@@ -23,7 +23,7 @@ public class JavaApplication7 {
         
     //public static ArrayList prodhh (Panneau pan, ArrayList prodh, ArrayList Irrh, double coefperte, double surface){
  
-
+ /*    
         
         
         System.out.println ("test");
@@ -31,10 +31,8 @@ public class JavaApplication7 {
 
 
               
-              Lieu lisb = new Lieu (new ArrayList());
-              Espace maiz = new Espace (20,10,10,10000, new ArrayList());
-              
- /*             
+           
+         
              
               double eneprod;
               double prix;
@@ -56,15 +54,19 @@ prix=MathOperation.prix_panneaux(test1, surfaceinst);
 System.out.println("prix"+prix);
        */ 
 
+           Lieu lisb = new Lieu (1,"nom",1,1,new ArrayList());
+            Espace maiz = new Espace (20,10,10,10000, new ArrayList());
+              
+        
 ArrayList<ArrayList> arrayTest = CsvReader.main("consoh.csv");
 ArrayList<ArrayList> arrayTest2 = CsvReader.main("Irrh.csv");
 
-for (ArrayList<String> als:arrayTest) {
+/*for (ArrayList<String> als:arrayTest) {
                 for (String str :
                         als) {
                     System.out.println("args = [" + str + "]");
                 }
-            }
+            }*/
     //faire un arraylist 
     //fichier csv interraction excel java
               
@@ -73,7 +75,6 @@ lisb.setIrrh(arrayTest2);
 maiz.setConsoh(arrayTest);
    
         
- double maxstock;
  
  // maxstock= MathOperation.consostock(arrayTest, arrayTest2);
  // System.out.println(maxstock) ;

@@ -26,7 +26,6 @@ public class fEntree extends javax.swing.JFrame {
     public fEntree() {
         initComponents();
         this.getContentPane().setBackground(Color.WHITE);
-            jLabel32.setText("TEST");
 
     }
 
@@ -455,9 +454,11 @@ public class fEntree extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
-
+        
+            jLabel32.setText("TEST");
+initialiserVariables();
         //mettre un while pas toutes les cases remplies rester sur la page
-
+        
         // TODO add your handling code here:
         // Récupérer les valeurs de chacune des combobox
         String module = jComboBox1.getSelectedItem().toString();
@@ -468,7 +469,8 @@ public class fEntree extends javax.swing.JFrame {
 
 
         
-        
+                    jLabel32.setText("TEST2");
+
         
         // Analyser l'entrée utilisateur pour chacune des combobox
         // Selon le résultat, trouver l'obJET jAVA correspondant
@@ -476,11 +478,38 @@ public class fEntree extends javax.swing.JFrame {
         // faire pareil pour Batterie & Panneau
         Batterie batterieEntree = getBatterieParNom(batterie);
         Panneau panneauEntree = getPanneauParNom(module);
-        Espace maizEntree = listeEspaces.get(1);//????????????????????
+        
+                           jLabel32.setText("TEST3");
+
+        
+        Espace maizEntree = getMaiz ();//????????????????????
+        
+        
+                   jLabel32.setText("TEST4");
+ 
         
        // puis appeler la fonction mathématique :
+         ArrayList<ArrayList> grdarrayconsoh = CsvReader.main("consoh.csv");
+         ArrayList<ArrayList> grdarrayirrh = CsvReader.main("Irrh.csv");
+      
+                            jLabel32.setText("TEST5");
+
+                 maizEntree.setConsoh(grdarrayconsoh);
+
+         
+         
+                        jLabel32.setText("TEST6");
+ 
+                lieuEntre.setIrrh(grdarrayirrh);
+
         double consotot;
-        consotot = MathOperation.consotot(listeLieux);//param : Espace.consohh
+        
+                jLabel32.setText("TEST7");
+
+        
+        consotot = MathOperation.consotot(maizEntree.getconsoh());//param : Espace.consohh
+                  
+                           jLabel32.setText("TEST8");
 
         int or;
         switch (orientation) {
@@ -516,6 +545,8 @@ public class fEntree extends javax.swing.JFrame {
         }
         maizEntree.setInclinaison(incl);
 
+
+        
         double coefperte; 
         coefperte=MathOperation.coefperte(maizEntree);//param : espace maiz
         double energieprodpan;
@@ -530,7 +561,7 @@ public class fEntree extends javax.swing.JFrame {
         else {
     }
         
-        panneauEntree.getprodh()=MathOperation.prodhh(panneauEntree, lieuEntre, coefperte, surface);
+        panneauEntree.getprodh().add(MathOperation.prodhh(panneauEntree, lieuEntre, coefperte, surface));
         
         double prodtot;
         prodtot=MathOperation.prodtot(listeLieux); 
@@ -748,6 +779,19 @@ public class fEntree extends javax.swing.JFrame {
         
         return null;
     }
+        
+        public Espace getMaiz() {
+        Iterator<Espace> it = listeEspaces.iterator();
+
+        while (it.hasNext()) {
+            Espace tempo = it.next();
+                return tempo;
+                   
+        }
+                return null;
+
+    }
+        
     // faire getBatterieParNom
     // faire getPanneauParNom
         
