@@ -677,19 +677,24 @@ initialiserVariables();
         // Code ci-dessous : à répéter pour chacun des lieux à ajouter
        // ArrayList grdarraylistirrh = CsvReader.main("Irrh.csv");
         
+        ArrayList listeIrrhtxt = new ArrayList()  ;
         ArrayList listeIrrh = new ArrayList()  ;
-        listeIrrh = CsvReader.getValues("Irrh.csv");
-        
-        
-        Iterator it = listeIrrh.listIterator();
+
+        listeIrrhtxt = CsvReader.getValues("Irrh.csv");
+                   
+      Iterator it = listeIrrhtxt.listIterator();
         while (it.hasNext()) {
             
-            double elt = (double)it.next();
+            double elt = Double.parseDouble(it.next().toString());
             listeIrrh.add(elt);
             
         }
-        
-        
+       
+         /* for(int j=1;j<listeIrrhtxt.size();j++){
+            double elt = Double.parseDouble(listeIrrhtxt.get(j).toString());
+            listeIrrh.add(elt);
+
+        }*/
         Lieu tempLieu = new Lieu(147, "lisbonne", 30, 40, listeIrrh);
         tempLieu.setIrrh(listeIrrh);
         listeLieux.add(tempLieu);
@@ -720,15 +725,17 @@ initialiserVariables();
         
               
          // Code ci-dessous : à répéter pour chacun des espace à ajouter
-       // ArrayList listeconsotxt = CsvReader.main("consoh.csv");
+        ArrayList listeconsotxt = CsvReader.main("consoh.csv");
+        
+         
         ArrayList listeconso = new ArrayList() ;
 
-        listeconso = CsvReader.getValues("consoh.csv");
+        listeconsotxt = CsvReader.getValues("consoh.csv");
         
-        Iterator it2 = listeconso.iterator();
+        Iterator it2 = listeconsotxt.iterator();
         while (it2.hasNext()) {
             
-            double elt = (double)it2.next();
+            double elt = Double.parseDouble(it.next().toString());
             listeconso.add(elt);
             
         }

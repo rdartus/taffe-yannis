@@ -59,8 +59,7 @@ public class Lieu {
       for (i=1; i<arraylist.size(); i++)
       {
             
-          System.out.println(arraylist.get(i));
-          Irrhh.add(Integer.valueOf(arraylist.get(i)));
+          Irrhh.add(arraylist.get(i));
      
       
       }
