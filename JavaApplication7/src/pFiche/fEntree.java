@@ -81,6 +81,7 @@ public class fEntree extends javax.swing.JFrame {
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -230,6 +231,8 @@ public class fEntree extends javax.swing.JFrame {
 
         jLabel32.setText("lalala");
 
+        jLabel33.setText("Prodtot ");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -314,7 +317,8 @@ public class fEntree extends javax.swing.JFrame {
                                 .addComponent(jLabel30)
                                 .addGap(59, 59, 59)
                                 .addComponent(jLabel31))
-                            .addComponent(jLabel32))
+                            .addComponent(jLabel32)
+                            .addComponent(jLabel33))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel20)
@@ -383,7 +387,9 @@ public class fEntree extends javax.swing.JFrame {
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel18)
-                        .addGap(48, 48, 48)
+                        .addGap(28, 28, 28)
+                        .addComponent(jLabel33)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel28)
@@ -517,20 +523,22 @@ public class fEntree extends javax.swing.JFrame {
         double surfacelibre;
         surfacelibre=MathOperation.surface_installee_libre(consotot, energieprodpan, panneauEntree);
         double surface;
-        surface=MathOperation.surface_installee(maizEntree, panneauEntree); //null=maiz
+        surface=MathOperation.surface_installee(maizEntree, panneauEntree); 
         if (surfacelibre < maizEntree.getSurfacedispo()){ //pour ne pas surdim
             surface = surfacelibre;
         }
         else {
     }
-       // panneauEntree.arrayprod=MathOperation.prodhh (Panneau pan, ArrayList prodh, ArrayList Irrh, double coefperte, double surface)              calcul prodhh
+        
+        panneauEntree.getprodh()=MathOperation.prodhh(panneauEntree, lieuEntre, coefperte, surface);
         
         double prodtot;
         prodtot=MathOperation.prodtot(listeLieux); 
         
-        ArrayList consostock ;
+        double consostock ;
         
-        //consostock=MathOperation.consostock( consohh,prodhh);
+        consostock=MathOperation.consostock(maizEntree.getconsoh(), panneauEntree.getprodh());
+        
         
         int nbbat;
         nbbat=MathOperation.nbBat(prodtot, batterieEntree);
@@ -559,8 +567,7 @@ public class fEntree extends javax.swing.JFrame {
                     
                     jLabel26.setText(Double.toString(tarifbat));
                     
-                    double totstock =0; //il faut le calculer
-                    jLabel27.setText(Double.toString(totstock));
+                    jLabel27.setText(Double.toString(consostock));
                     
                     jLabel28.setText(Double.toString(nbbat));
                     
@@ -572,8 +579,10 @@ public class fEntree extends javax.swing.JFrame {
                     
                     jLabel31.setText(Double.toString(gainEnv));
 
+                    jLabel33.setText(Double.toString(prodtot));
                     
                     
+                    //autoprod et autoconso essayer piedchart
                    
 
                     
@@ -831,6 +840,7 @@ public class fEntree extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

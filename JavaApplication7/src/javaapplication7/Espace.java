@@ -29,6 +29,12 @@ public class Espace {
       
     }
       
+      
+       public ArrayList getconsoh(){
+          return this.consohh;
+      }
+      
+      
        public void setConsoh(ArrayList<ArrayList> grandeArrayList){
       
       String value ;
