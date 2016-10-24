@@ -26,6 +26,10 @@ public class fSortie extends javax.swing.JFrame {
     public fSortie() {
         initComponents();
         this.getContentPane().setBackground(Color.WHITE);
+        
+        
+        
+        
 
     }
 

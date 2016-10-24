@@ -444,8 +444,19 @@ public class fEntree extends javax.swing.JFrame {
 
     public void initialiserVariables() {
         // Code ci-dessous : à répéter pour chacun des lieux à ajouter
-        ArrayList<ArrayList> listeIrrh = CsvReader.main("Irrh.csv");
-        Lieu tempLieu = new Lieu(147, "lisbonne", 30, 40, null);
+        ArrayList listeIrrhtxt = CsvReader.main("Irrh.csv");
+        ArrayList listeIrrh = new ArrayList() ;
+        
+        Iterator it = listeIrrhtxt.iterator();
+        while (it.hasNext()) {
+            
+            double elt = (double)it.next();
+            listeIrrh.add(elt);
+            
+        }
+        
+        
+        Lieu tempLieu = new Lieu(147, "lisbonne", 30, 40, listeIrrh);
         tempLieu.setIrrh(listeIrrh);
         listeLieux.add(tempLieu);
         // idem pour les batteries et les panneaux (créer le constructeur de Panneau et Batterie s'il existe pas)
@@ -475,8 +486,20 @@ public class fEntree extends javax.swing.JFrame {
         
               
          // Code ci-dessous : à répéter pour chacun des espace à ajouter
-        ArrayList<ArrayList> listeConso = CsvReader.main("consoh.csv");
-        Espace tempEsp = new Espace(1,2.0,3.0,4,null);
+        ArrayList listeconsotxt = CsvReader.main("consoh.csv");
+        ArrayList listeconso = new ArrayList() ;
+
+        
+        Iterator it2 = listeconsotxt.iterator();
+        while (it2.hasNext()) {
+            
+            double elt = (double)it2.next();
+            listeconso.add(elt);
+            
+        }
+        
+        
+        Espace tempEsp = new Espace(1,2.0,3.0,4,listeconso);
         listeEspaces.add(tempEsp);
 
         
@@ -484,6 +507,7 @@ public class fEntree extends javax.swing.JFrame {
     }
 
     public Lieu getLieuParNom(String nom) {
+        
         Iterator<Lieu> it = listeLieux.iterator();
 
         while (it.hasNext()) {

@@ -93,6 +93,30 @@ public class Panneau {
        return this.nom;
    }
   
+      
+      public ArrayList getprodh(){
+          return prodhh;
+      }
+      
+      
+ public void setprodh(ArrayList<ArrayList> grandeArrayList){
+      
+      String value ;
+      int i;
+      
+      for (i=1; i<grandeArrayList.size(); i++)
+      {
+            
+          ArrayList<String> alLigne = grandeArrayList.get(i);
+          System.out.println(alLigne.get(1));
+          prodhh.add(Integer.valueOf(alLigne.get(1)));
+     
+      
+      }
 
+      
+      
+}
+ 
 }
  

@@ -1,6 +1,7 @@
 package javaapplication7;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * Created by Richard-DT on 20/10/2016.
@@ -19,9 +20,11 @@ public class MathOperation {
         
         for(i=0;i<365;i++){
             for(j=j;j<j+24;j++){
-                if( (double)prodh.get(j) > (double)consoh.get(j) ){
+                if( ((double)prodh.get(j)) > (double)consoh.get(j) ){
                     jstock = jstock + ((double)prodh.get(j) - (double)consoh.get(j)); 
                 }
+                
+                
             }
             if(jstock>maxstock){
                 maxstock=jstock;
@@ -49,15 +52,28 @@ public class MathOperation {
       }  
       
         
-         public static ArrayList prodhh (Panneau pan, ArrayList prodh, ArrayList Irrh, double coefperte, double surface){
+         public static ArrayList prodhh (Panneau pan, Lieu li , double coefperte, double surface){
           
              int cst =24;
              int j;
-             
-             for(j=1;j<8760;j++){
-                prodh.get(j)  = (double )Irrh.get(j) * pan.getRendementp() *pan.getSurfacep()*cst*coefperte*surface; 
-                }
-             
+             ArrayList prodh = pan.getprodh();
+             ArrayList Irrh = li.getIrrh();
+
+             Iterator<String> it = prodh.iterator();
+             Iterator<String> it2 = Irrh.iterator();
+
+
+        while (it.hasNext()) {
+            double tempo = Double.parseDouble(it.next());
+            double tempo2 = Double.parseDouble(it2.next());
+            
+          prodh.add(tempo2*pan.getRendementp() *pan.getSurfacep()*cst*coefperte*surface);
+
+
+           
+        }
+
+                        
              return prodh;
       }  
          

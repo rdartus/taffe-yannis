@@ -19,12 +19,18 @@ public class JavaApplication7 {
     public static void main(String[] args) {
         // TODO code application logic here
         
-              System.out.println ("test");
+      
+        
+    //public static ArrayList prodhh (Panneau pan, ArrayList prodh, ArrayList Irrh, double coefperte, double surface){
+ 
+
+        
+        
+        System.out.println ("test");
               System.out.println ("testGitKraken");
 
 
               
-              Panneau test1 = new Panneau (2,0.15,200,0.2,500,new ArrayList());
               Lieu lisb = new Lieu (new ArrayList());
               Espace maiz = new Espace (20,10,10,10000, new ArrayList());
               

@@ -47,11 +47,14 @@ public class Lieu {
       
       }
 
-      
+     
       
   }
   
-   
+     public ArrayList getIrrh(){
+          return Irrhh;
+      }
+      
   
 
     public int getMirr() {
