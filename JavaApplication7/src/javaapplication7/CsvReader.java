@@ -59,4 +59,14 @@ public class CsvReader {
         return new ArrayList();
 
     }
+    public static ArrayList<String> getValues(String nomFichier){
+        ArrayList<ArrayList<String>> al = (ArrayList<ArrayList<String>>)main(nomFichier);
+        ArrayList<String> alValues = new ArrayList<>();
+        for (ArrayList<String> petiteAl :
+                al) {
+            alValues.add((String)petiteAl.get(1));
+        }
+        alValues.remove(0);
+        return alValues;
+    }
 }

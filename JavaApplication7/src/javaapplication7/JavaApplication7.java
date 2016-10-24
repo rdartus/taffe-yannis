@@ -19,7 +19,8 @@ public class JavaApplication7 {
     public static void main(String[] args) {
         // TODO code application logic here
         
-      
+
+        ArrayList<String> al = CsvReader.getValues("consoh.csv");
         
     //public static ArrayList prodhh (Panneau pan, ArrayList prodh, ArrayList Irrh, double coefperte, double surface){
  

@@ -29,7 +29,7 @@ public class Piechart extends javax.swing.JFrame {
      */
     public Piechart() {
         initComponents();
-      
+
     }
 
     /**
@@ -60,9 +60,9 @@ public class Piechart extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    
-    
-    
+
+
+
     public static void main(String args[]) {
         /*
          * Set the Nimbus look and feel
@@ -94,21 +94,21 @@ public class Piechart extends javax.swing.JFrame {
         /*
          * Create and display the form
          */
-        
-        DefaultPieDataset piedataset = new DefaultPieDataset();  
-       piedataset.setValue("A", new Integer(60));  
-       piedataset.setValue("B", new Integer(25));  
-       piedataset.setValue("C", new Integer(10));  
-       piedataset.setValue("D", new Integer(5));  
-       piedataset.setValue("E", new Integer(5));  
-      JFreeChart piechart = ChartFactory.createPieChart(  
-         "Marks Distribution",   // Title  
-         piedataset,             // Dataset  
-         true,                   // Show legend  
-         true,                   // Use tooltips  
-         false                   // Generate URLs  
-      );  
-        
+
+        DefaultPieDataset piedataset = new DefaultPieDataset();
+       piedataset.setValue("A", new Integer(60));
+       piedataset.setValue("B", new Integer(25));
+       piedataset.setValue("C", new Integer(10));
+       piedataset.setValue("D", new Integer(5));
+       piedataset.setValue("E", new Integer(5));
+      JFreeChart piechart = ChartFactory.createPieChart(
+         "Marks Distribution",   // Title
+         piedataset,             // Dataset
+         true,                   // Show legend
+         true,                   // Use tooltips
+         false                   // Generate URLs
+      );
+
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
