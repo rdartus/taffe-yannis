@@ -95,7 +95,7 @@ public class Panneau {
   
       
       public ArrayList getprodh(){
-          return prodhh;
+          return this.prodhh;
       }
       
       
