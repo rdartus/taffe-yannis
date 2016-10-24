@@ -10,6 +10,7 @@ public class MathOperation {
     
         public static double consostock (ArrayList consoh, ArrayList prodh){
 
+            
         double maxstock=0;
         double jstock=0;
         double totstock=0;

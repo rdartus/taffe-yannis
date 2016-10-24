@@ -99,7 +99,7 @@ public class Panneau {
       }
       
       
- public void setprodh(ArrayList<ArrayList> grandeArrayList){
+/* public void setprodh(ArrayList<ArrayList> grandeArrayList){
       
       String value ;
       int i;
@@ -116,7 +116,22 @@ public class Panneau {
 
       
       
-}
+}*/
+      
+       public void setprodh(ArrayList<String> arraylist){
+      
+      String value ;
+      int i;
+      
+      for (i=1; i<arraylist.size(); i++)
+      {
+            
+          System.out.println(arraylist.get(i));
+          prodhh.add(Integer.valueOf(arraylist.get(i)));
+     
+      
+      }
  
+}
 }
  

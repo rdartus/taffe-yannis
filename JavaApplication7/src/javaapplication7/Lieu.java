@@ -32,7 +32,7 @@ public class Lieu {
 
     }
  
-  public void setIrrh(ArrayList<ArrayList> grandeArrayList){
+  /*public void setIrrh(ArrayList<ArrayList> grandeArrayList){
       
       String value ;
       int i;
@@ -43,6 +43,24 @@ public class Lieu {
           ArrayList<String> alLigne = grandeArrayList.get(i);
           System.out.println(alLigne.get(1));
           Irrhh.add(Integer.valueOf(alLigne.get(1)));
+     
+      
+      }
+
+     
+      
+  }*/
+  
+  public void setIrrh(ArrayList<String> arraylist){
+      
+      String value ;
+      int i;
+      
+      for (i=1; i<arraylist.size(); i++)
+      {
+            
+          System.out.println(arraylist.get(i));
+          Irrhh.add(Integer.valueOf(arraylist.get(i)));
      
       
       }

@@ -454,7 +454,6 @@ public class fEntree extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
-        
             jLabel32.setText("TEST");
 initialiserVariables();
         //mettre un while pas toutes les cases remplies rester sur la page
@@ -489,18 +488,18 @@ initialiserVariables();
  
         
        // puis appeler la fonction mathématique :
-         ArrayList<ArrayList> grdarrayconsoh = CsvReader.main("consoh.csv");
-         ArrayList<ArrayList> grdarrayirrh = CsvReader.main("Irrh.csv");
+         ArrayList<String> arrayconsoh = CsvReader.getValues("consoh.csv");
+         ArrayList<String> arrayirrh = CsvReader.getValues("Irrh.csv");
       
                             jLabel32.setText("TEST5");
 
-                 maizEntree.setConsoh(grdarrayconsoh);
+                 maizEntree.setConsoh(arrayconsoh);
 
          
          
                         jLabel32.setText("TEST6");
  
-                lieuEntre.setIrrh(grdarrayirrh);
+                lieuEntre.setIrrh(arrayirrh);
 
         double consotot;
         
@@ -676,10 +675,13 @@ initialiserVariables();
 
     public void initialiserVariables() {
         // Code ci-dessous : à répéter pour chacun des lieux à ajouter
-        ArrayList listeIrrhtxt = CsvReader.main("Irrh.csv");
-        ArrayList listeIrrh = new ArrayList() ;
+       // ArrayList grdarraylistirrh = CsvReader.main("Irrh.csv");
         
-        Iterator it = listeIrrhtxt.iterator();
+        ArrayList listeIrrh = new ArrayList()  ;
+        listeIrrh = CsvReader.getValues("Irrh.csv");
+        
+        
+        Iterator it = listeIrrh.listIterator();
         while (it.hasNext()) {
             
             double elt = (double)it.next();
@@ -718,11 +720,12 @@ initialiserVariables();
         
               
          // Code ci-dessous : à répéter pour chacun des espace à ajouter
-        ArrayList listeconsotxt = CsvReader.main("consoh.csv");
+       // ArrayList listeconsotxt = CsvReader.main("consoh.csv");
         ArrayList listeconso = new ArrayList() ;
 
+        listeconso = CsvReader.getValues("consoh.csv");
         
-        Iterator it2 = listeconsotxt.iterator();
+        Iterator it2 = listeconso.iterator();
         while (it2.hasNext()) {
             
             double elt = (double)it2.next();

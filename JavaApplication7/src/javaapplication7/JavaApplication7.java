@@ -62,6 +62,11 @@ System.out.println("prix"+prix);
 ArrayList<ArrayList> arrayTest = CsvReader.main("consoh.csv");
 ArrayList<ArrayList> arrayTest2 = CsvReader.main("Irrh.csv");
 
+  ArrayList arrayTest3 =   CsvReader.getValues("Irrh.csv");
+  
+lisb.setIrrh(arrayTest3);
+
+
 /*for (ArrayList<String> als:arrayTest) {
                 for (String str :
                         als) {
@@ -72,8 +77,8 @@ ArrayList<ArrayList> arrayTest2 = CsvReader.main("Irrh.csv");
     //fichier csv interraction excel java
               
 
-lisb.setIrrh(arrayTest2);
-maiz.setConsoh(arrayTest);
+//lisb.setIrrh(arrayTest2);
+//maiz.setConsoh(arrayTest);
    
         
  
