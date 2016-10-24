@@ -115,6 +115,11 @@ public class fEntree extends javax.swing.JFrame {
         jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Nord ", "Sud", "Est", "Ouest" }));
 
         jComboBox5.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Inclinaison 1", "Inclinaison 2", "Inclinaison 3", "Inclinaison 4" }));
+        jComboBox5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox5ActionPerformed(evt);
+            }
+        });
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Boussole.png"))); // NOI18N
 
@@ -265,33 +270,31 @@ public class fEntree extends javax.swing.JFrame {
         switch (jComboBox1.getSelectedItem().toString()) {
             case "Poly":
                 jLabel14.setText("Blabla Poly c la vi");
-                jLabel9.setText("Surface");
-                jLabel10.setText("Rendement");
-                jLabel11.setText("Puissance");
-                jLabel17.setText("Prix");
+                jLabel9.setText("Surface 1.68");
+                jLabel10.setText("Rendement 15.5");
+                jLabel11.setText("Puissance 260");
+                jLabel17.setText("Prix 239");
              
                 break;
             case "Mono":
                 jLabel14.setText("Blabla Mono c la vi");
-                jLabel14.setText("Blabla Poly c la vi");
-                jLabel9.setText("Surface");
-                jLabel10.setText("Rendement");
-                jLabel11.setText("Puissance");
-                jLabel17.setText("Prix");
+                jLabel9.setText("Surface 1.61");
+                jLabel10.setText("Rendement 17.1");
+                jLabel11.setText("Puissance 280");
+                jLabel17.setText("Prix 268");
                 break;
             case "Amorphe":
                 jLabel14.setText("Blabla Amorphe c la vi");
-                 jLabel9.setText("Surface");
-                jLabel10.setText("Rendement");
-                jLabel11.setText("Puissance");
-                jLabel12.setText("Prix");
+                 jLabel9.setText("Surface 0.79");
+                jLabel10.setText("Rendement 8");
+                jLabel11.setText("Puissance 50");
+                jLabel12.setText("Prix 45");
                 break;
         }
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        this.setVisible(false);
-        new fSortie().setVisible(true);
+        
 
         //mettre un while pas toutes les cases remplies rester sur la page
 
@@ -318,7 +321,39 @@ public class fEntree extends javax.swing.JFrame {
        // puis appeler la fonction mathématique :
         double consotot;
         consotot = MathOperation.consotot(listeLieux);//param : Espace.consohh
-        double coefperte;
+
+        int or;
+        switch (orientation) {
+            case "Nord":
+                or=1;
+                break;
+            case "Sud":
+                or=2;
+                break;
+            case "Est":
+                or=3;
+                break;
+            default:
+                or=4;
+                break;
+        }
+               maizEntree.setOrientation(or) ;
+
+       int incl;
+        switch (inclinaison) {
+            case "inclinaison1":
+                incl=1;
+                break;
+            case "inclinaison2":
+                incl=2;
+                break;
+            default:
+                incl=3;
+                break;
+        }
+        maizEntree.setInclinaison(incl);
+
+        double coefperte; 
         coefperte=MathOperation.coefperte(maizEntree);//param : espace maiz
         double energieprodpan;
         energieprodpan=MathOperation.energy_prod(panneauEntree, lieuEntre, maizEntree);//pan li maiz
@@ -331,7 +366,7 @@ public class fEntree extends javax.swing.JFrame {
         }
         else {
     }
-       // panneauEntree.arrayprod=MathOperation.prodhh              calcul prodhh
+       // panneauEntree.arrayprod=MathOperation.prodhh (Panneau pan, ArrayList prodh, ArrayList Irrh, double coefperte, double surface)              calcul prodhh
         
         double prodtot;
         prodtot=MathOperation.prodtot(listeLieux); 
@@ -359,6 +394,10 @@ public class fEntree extends javax.swing.JFrame {
         
         //MathOperation calcul = new MathOperation();
         //calcul.calculerGain(lieuEntre, panneauEntree);
+        this.setVisible(false);
+        new fSortie().setVisible(true);
+        
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
@@ -377,27 +416,31 @@ public class fEntree extends javax.swing.JFrame {
  switch (jComboBox3.getSelectedItem().toString()) {
             case "GEL":
                 jLabel16.setText("Blabla GEL c la vi");
-                 jLabel12.setText("Capa");
-                jLabel13.setText("Voltage");
-                jLabel21.setText("Nb cycles");
-                jLabel22.setText("Prix");
+                 jLabel12.setText("Capa 1320");
+                jLabel13.setText("Voltage 12");
+                jLabel21.setText("Nb cycles 2500");
+                jLabel22.setText("Prix 549");
                 break;
             case "AGM":
                 jLabel16.setText("Blabla AGM c la vi");
-                 jLabel12.setText("Capa");
-                jLabel13.setText("Voltage");
-                jLabel21.setText("Nb cycles");
-                jLabel22.setText("Prix");
+                 jLabel12.setText("Capa 220");
+                jLabel13.setText("Voltage 12");
+                jLabel21.setText("Nb cycles 600");
+                jLabel22.setText("Prix 527");
                 break;
             case "TESLA":
                 jLabel16.setText("Blabla TESLA c la vi");
-                 jLabel12.setText("Capa");
+                 jLabel12.setText("Capa ");
                 jLabel13.setText("Voltage");
                 jLabel21.setText("Nb cycles");
                 jLabel22.setText("Prix");
                 break;
         }        // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox3ActionPerformed
+
+    private void jComboBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox5ActionPerformed
 
     public void initialiserVariables() {
         // Code ci-dessous : à répéter pour chacun des lieux à ajouter
@@ -414,21 +457,21 @@ public class fEntree extends javax.swing.JFrame {
         listePanneaux.add(tempPan);
         
         Panneau tempPan2 = new Panneau(1.61,17.1,280,268,null,"Mono");
-        listePanneaux.add(tempPan);
+        listePanneaux.add(tempPan2);
         
         
         Panneau tempPan3 = new Panneau(0.79,8,50,45,null,"Amorphe");
-        listePanneaux.add(tempPan);
+        listePanneaux.add(tempPan3);
         
          // Code ci-dessous : à répéter pour chacun des Batteries à ajouter
         Batterie tempBat = new Batterie(20,350,5000,2700,"TESLA");
         listeBatteries.add(tempBat);
         
         Batterie tempBat2 = new Batterie(230,12,600,527,"AGM");
-        listeBatteries.add(tempBat);
+        listeBatteries.add(tempBat2);
         
         Batterie tempBat3 = new Batterie(220,12,2500,549,"GEL");
-        listeBatteries.add(tempBat);
+        listeBatteries.add(tempBat3);
         
               
          // Code ci-dessous : à répéter pour chacun des espace à ajouter

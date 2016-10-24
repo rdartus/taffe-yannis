@@ -49,13 +49,13 @@ public class MathOperation {
       }  
       
         
-         public static ArrayList prodhh (Panneau pan, ArrayList prodh, ArrayList Irrh, double coefperte){
+         public static ArrayList prodhh (Panneau pan, ArrayList prodh, ArrayList Irrh, double coefperte, double surface){
           
              int cst =24;
              int j;
              
              for(j=1;j<8760;j++){
-                prodh.get(j)  = (double )Irrh.get(j) * pan.getRendementp() *pan.getSurfacep()*cst*coefperte; 
+                prodh.get(j)  = (double )Irrh.get(j) * pan.getRendementp() *pan.getSurfacep()*cst*coefperte*surface; 
                 }
              
              return prodh;

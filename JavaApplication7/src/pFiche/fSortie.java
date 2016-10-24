@@ -130,7 +130,7 @@ public class fSortie extends javax.swing.JFrame {
                             .addComponent(jLabel6)
                             .addComponent(jLabel7)
                             .addComponent(jLabel8))))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(58, 58, 58)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -142,7 +142,7 @@ public class fSortie extends javax.swing.JFrame {
                                     .addComponent(jLabel10)
                                     .addComponent(jLabel11))
                                 .addContainerGap())
-                            .addGroup(layout.createSequentialGroup()
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGap(0, 40, Short.MAX_VALUE)
                                 .addComponent(jLabel12)
                                 .addGap(51, 51, 51)
@@ -150,7 +150,7 @@ public class fSortie extends javax.swing.JFrame {
                                 .addGap(59, 59, 59)
                                 .addComponent(jLabel3)
                                 .addGap(96, 96, 96))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton1)
                         .addGap(18, 18, 18))))
@@ -174,8 +174,7 @@ public class fSortie extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2))
-                        .addContainerGap())
+                            .addComponent(jButton2)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel5)
@@ -192,7 +191,8 @@ public class fSortie extends javax.swing.JFrame {
                             .addComponent(jLabel12))
                         .addGap(81, 81, 81)
                         .addComponent(jButton1)
-                        .addGap(20, 20, 20))))
+                        .addGap(10, 10, 10)))
+                .addContainerGap())
         );
 
         pack();
@@ -257,6 +257,11 @@ this.setVisible(false);
         /*
          * Create and display the form
          */
+        
+        jLabel6.get
+        
+        
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
