@@ -81,6 +81,7 @@ public class fEntree extends javax.swing.JFrame {
         jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -232,6 +233,8 @@ public class fEntree extends javax.swing.JFrame {
 
         jLabel33.setText("Prodtot ");
 
+        jLabel34.setText("ROI");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -300,24 +303,25 @@ public class fEntree extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel18)
+                            .addComponent(jLabel32)
+                            .addComponent(jLabel33)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel23)
                                     .addComponent(jLabel24)
-                                    .addComponent(jLabel25))
-                                .addGap(110, 110, 110)
+                                    .addComponent(jLabel25)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel29)
+                                        .addGap(51, 51, 51)
+                                        .addComponent(jLabel30)
+                                        .addGap(59, 59, 59)
+                                        .addComponent(jLabel31)))
+                                .addGap(34, 34, 34)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel34)
                                     .addComponent(jLabel28)
                                     .addComponent(jLabel27)
-                                    .addComponent(jLabel26)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel29)
-                                .addGap(51, 51, 51)
-                                .addComponent(jLabel30)
-                                .addGap(59, 59, 59)
-                                .addComponent(jLabel31))
-                            .addComponent(jLabel32)
-                            .addComponent(jLabel33))
+                                    .addComponent(jLabel26))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel20)
@@ -416,7 +420,8 @@ public class fEntree extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel30)
                             .addComponent(jLabel31)
-                            .addComponent(jLabel29))
+                            .addComponent(jLabel29)
+                            .addComponent(jLabel34))
                         .addGap(83, 83, 83))))
         );
 
@@ -577,7 +582,7 @@ initialiserVariables();
                                    jLabel32.setText("TEST13");
 
         double prodtot;
-        prodtot=MathOperation.prodtot(listeLieux); 
+        prodtot=MathOperation.prodtot(panneauEntree.getprodh()); 
         
         double consostock ;
         
@@ -629,7 +634,11 @@ initialiserVariables();
 
                     jLabel33.setText(Double.toString(prodtot));
                     
+                    double roi;
+                    roi = MathOperation.roi(tarifbat, prixtot, prodtot);
                     
+                    jLabel34.setText(Double.toString(roi));
+
                     //autoprod et autoconso essayer piedchart
                    
 
@@ -922,6 +931,7 @@ initialiserVariables();
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
