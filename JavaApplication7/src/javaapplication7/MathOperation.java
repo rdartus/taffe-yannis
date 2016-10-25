@@ -55,14 +55,14 @@ public class MathOperation {
         
          public static ArrayList prodhh (Panneau pan, Lieu li , double coefperte, double surface){
           
-             int cst =24;
+             //int cst =24;
              int j;
              ArrayList prodh = new ArrayList();
              ArrayList Irrh = li.getIrrh();
              
                for(j=0;j<Irrh.size();j++){
                    
-                   double d =(double)Irrh.get(j)* pan.getRendementp()*pan.getSurfacep()*cst*coefperte*surface;
+                   double d =(double)Irrh.get(j)* pan.getRendementp()*coefperte*surface;
                  prodh.add(d); 
                 }
              
@@ -104,7 +104,7 @@ public class MathOperation {
           
           //double decharge, int jautonomie, int tension, int capacite
           
-          nbBat = (int)Math.ceil(maxstock*decharge*jautonomie/(bat.getpuissance()*bat.getcapastock()));
+          nbBat = (int)Math.ceil((maxstock*0.8*decharge*jautonomie)/(bat.getpuissance()*bat.getcapastock()));
           return nbBat;
       }  
       
@@ -117,12 +117,20 @@ public class MathOperation {
     http://energie-developpement.blogspot.fr/2012/01/photovoltaique-batteries-capacite.html
     */
     
-      public static double surface_installee_libre(double conso , double energieunpan, Panneau pan){
+      public static double surface_installee_libre(double conso , double energieunpan, Panneau pan, double coefperte ,Lieu li){
 
-        double nbpan;
-        nbpan= conso/energieunpan;
           
-        return nbpan*pan.getSurfacep();
+          //double surface;
+          //surface = (conso)/(pan.getRendementp()*coefperte*li.getMirr()*365);
+                  
+                  
+        double nbpan;
+        nbpan= conso/(energieunpan*365);
+          
+        double resultat;
+        resultat =nbpan*pan.getSurfacep();
+        
+        return resultat;
             
       }
       
@@ -131,7 +139,7 @@ public class MathOperation {
           double prixkwh =0.15; 
           double resultat;
           
-          resultat = eneprod *prixkwh;
+          resultat = (eneprod/1000)*prixkwh;
                 
           return resultat;
       }
@@ -238,7 +246,7 @@ resultat = eneprodtot/consotot;
           
        
          
-        return eneprod*eco; 
+        return (eneprod/1000)*eco; 
           
     } 
      
@@ -251,7 +259,7 @@ resultat = eneprodtot/consotot;
          
        
          
-        return (tarifbat+prixpan)/(prodan*prixkwh); 
+        return (tarifbat+prixpan)/((prodan/1000)*prixkwh); 
           
     } 
       
