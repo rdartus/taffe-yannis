@@ -19,8 +19,8 @@ public class MathOperation {
         double prodj;
         double consj;
         
-        for(i=0;i<365;i++){
-            for(j=j;j<j+24;j++){
+        for(i=0 ;i<365;i++){
+            for(j=i*24;j<(i+1)*24;j++){
                 if( ((double)prodh.get(j)) > (double)consoh.get(j) ){
                     jstock = jstock + ((double)prodh.get(j) - (double)consoh.get(j)); 
                 }
@@ -45,7 +45,7 @@ public class MathOperation {
              double consotot = 0;
              int j;
              
-             for(j=1;j<8760;j++){
+             for(j=1;j<consoh.size();j++){
                  consotot = consotot + (double)consoh.get(j); 
                 }
              
@@ -57,10 +57,17 @@ public class MathOperation {
           
              int cst =24;
              int j;
-             ArrayList prodh = pan.getprodh();
+             ArrayList prodh = new ArrayList();
              ArrayList Irrh = li.getIrrh();
-
-             Iterator<String> it = prodh.iterator();
+             
+               for(j=0;j<Irrh.size();j++){
+                   
+                   double d =(double)Irrh.get(j)* pan.getRendementp()*pan.getSurfacep()*cst*coefperte*surface;
+                 prodh.add(d); 
+                }
+             
+             
+          /*   Iterator<String> it = prodh.iterator();
              Iterator<String> it2 = Irrh.iterator();
 
 
@@ -73,7 +80,7 @@ public class MathOperation {
 
            
         }
-
+*/
                         
              return prodh;
       }  
@@ -83,7 +90,7 @@ public class MathOperation {
           int j;
           double prodtot=0;
           
-           for(j=1;j<8760;j++){
+           for(j=1;j<prodhh.size();j++){
                  prodtot = prodtot + (double)prodhh.get(j); 
                 }
           

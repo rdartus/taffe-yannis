@@ -16,7 +16,7 @@ public class Panneau {
     private double rendementp ;
     private int puissance;
     private int prix;
-    private ArrayList prodhh ;
+    private ArrayList prodhh = new ArrayList();
     private String nom;
     
     //arraylist production h/h
@@ -118,7 +118,7 @@ public class Panneau {
       
 }*/
       
-       public void setprodh(ArrayList<String> arraylist){
+    /*   public void setprodh(ArrayList<String> arraylist){
       
       String value ;
       int i;
@@ -132,6 +132,18 @@ public class Panneau {
       
       }
  
-}
+}*/
+       
+        public void setprodh(ArrayList<String> arraylist){
+      
+      String value ;
+     int i;
+      
+      prodhh = arraylist;
+        }
+       
+       
+       
+       
 }
  

@@ -6,6 +6,7 @@
 package javaapplication7;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  *
@@ -54,7 +55,7 @@ public class Lieu {
   public void setIrrh(ArrayList<String> arraylist){
       
       String value ;
-      int i;
+     int i;
       
       for (i=1; i<arraylist.size(); i++)
       {
@@ -63,9 +64,15 @@ public class Lieu {
      
       
       }
-
+ /*Iterator it = arraylist.listIterator();
+        while (it.hasNext()) {
+            
+            double elt = Double.parseDouble(it.next().toString());
+            Irrhh.add(elt);
+            
+        }
      
-      
+  */    
   }
   
      public ArrayList getIrrh(){

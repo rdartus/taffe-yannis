@@ -109,30 +109,30 @@ public class fEntree extends javax.swing.JFrame {
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Poly", "Mono", "Amorphe" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Choisir...", "Poly", "Mono", "Amorphe" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
             }
         });
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Lisbonne", "Paris", "Ouagadougou" }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Choisir...", "Lisbonne", "Paris", "Ouagadougou" }));
         jComboBox2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox2ActionPerformed(evt);
             }
         });
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "GEL", "AGM", "TESLA" }));
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Choisir...", "GEL", "AGM", "TESLA" }));
         jComboBox3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox3ActionPerformed(evt);
             }
         });
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Nord ", "Sud", "Est", "Ouest" }));
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Choisir...", "Nord ", "Sud", "Est", "Ouest" }));
 
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Inclinaison 1", "Inclinaison 2", "Inclinaison 3", "Inclinaison 4" }));
+        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Choisir...", "Inclinaison 1", "Inclinaison 2", "Inclinaison 3", "Inclinaison 4" }));
         jComboBox5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox5ActionPerformed(evt);
@@ -493,13 +493,13 @@ initialiserVariables();
       
                             jLabel32.setText("TEST5");
 
-                 maizEntree.setConsoh(arrayconsoh);
+                // maizEntree.setConsoh(arrayconsoh);
 
          
          
                         jLabel32.setText("TEST6");
  
-                lieuEntre.setIrrh(arrayirrh);
+                //lieuEntre.setIrrh(arrayirrh);
 
         double consotot;
         
@@ -526,9 +526,17 @@ initialiserVariables();
                 break;
         }
         
-               
+                                          jLabel32.setText("TEST9");
+
                maizEntree.setOrientation(or) ;
-               maizEntree.setSurfacedispo(Integer.parseInt(jTextField1.getSelectedText()));
+               
+                                           jLabel32.setText("TEST10");
+
+               
+               maizEntree.setSurfacedispo(Integer.parseInt(jTextField1.getText()));
+
+               
+                                          jLabel32.setText("TEST11");
 
        int incl;
         switch (inclinaison) {
@@ -544,6 +552,7 @@ initialiserVariables();
         }
         maizEntree.setInclinaison(incl);
 
+                           jLabel32.setText("TEST12");
 
         
         double coefperte; 
@@ -559,9 +568,14 @@ initialiserVariables();
         }
         else {
     }
-        
-        panneauEntree.getprodh().add(MathOperation.prodhh(panneauEntree, lieuEntre, coefperte, surface));
-        
+        ArrayList test ;
+        test = MathOperation.prodhh(panneauEntree, lieuEntre, coefperte, surface);
+        panneauEntree.setprodh(test);
+                
+                
+        //panneauEntree.getprodh().add(MathOperation.prodhh(panneauEntree, lieuEntre, coefperte, surface));
+                                   jLabel32.setText("TEST13");
+
         double prodtot;
         prodtot=MathOperation.prodtot(listeLieux); 
         
@@ -569,7 +583,8 @@ initialiserVariables();
         
         consostock=MathOperation.consostock(maizEntree.getconsoh(), panneauEntree.getprodh());
         
-        
+                                   jLabel32.setText("TEST14");
+
         int nbbat;
         nbbat=MathOperation.nbBat(prodtot, batterieEntree);
         double gainEnv;
@@ -582,6 +597,9 @@ initialiserVariables();
         autoprod = MathOperation.Autoprod(prodtot, consotot);
         double autoconso;
         autoconso=1;
+        
+                                   jLabel32.setText("TEST15");
+
         
                     double nbpan=(surface/panneauEntree.getSurfacep());
                     jLabel32.setText(Double.toString(nbpan));
@@ -615,7 +633,8 @@ initialiserVariables();
                     //autoprod et autoconso essayer piedchart
                    
 
-                    
+                                                       jLabel32.setText("TEST16");
+
 
        
        
@@ -695,8 +714,8 @@ initialiserVariables();
             listeIrrh.add(elt);
 
         }*/
-        Lieu tempLieu = new Lieu(147, "lisbonne", 30, 40, listeIrrh);
-        tempLieu.setIrrh(listeIrrh);
+        Lieu tempLieu = new Lieu(147, "Lisbonne", 30, 40, listeIrrh);
+        //tempLieu.setIrrh(listeIrrh);
         listeLieux.add(tempLieu);
         // idem pour les batteries et les panneaux (créer le constructeur de Panneau et Batterie s'il existe pas)
   
@@ -734,8 +753,13 @@ initialiserVariables();
         
         Iterator it2 = listeconsotxt.iterator();
         while (it2.hasNext()) {
-            
-            double elt = Double.parseDouble(it.next().toString());
+             String str = it2.next().toString();
+            double elt =0;
+            try {
+            elt = Double.valueOf(str);
+                // 
+            } catch (Exception e) {
+            }
             listeconso.add(elt);
             
         }
@@ -754,7 +778,10 @@ initialiserVariables();
 
         while (it.hasNext()) {
             Lieu tempo = it.next();
-            if (tempo.getNom().equals(nom)) {
+            String str = tempo.getNom();
+            boolean bol = str.equals(nom);
+            
+            if (bol) {
                 return tempo;
             }
         }

@@ -53,7 +53,7 @@ public class Espace {
       
       
   }*/
-        public void setConsoh(ArrayList<String> arraylist){
+      /*  public void setConsoh(ArrayList<String> arraylist){
       
       String value ;
       int i;
@@ -67,7 +67,24 @@ public class Espace {
       
       }
  
-        }
+        }*/
+        
+          public void setConsoh(ArrayList<String> arraylist){
+      
+      String value ;
+     int i;
+      
+      for (i=1; i<arraylist.size(); i++)
+      {
+            
+          consohh.add(arraylist.get(i));
+     
+      
+      }
+          }        
+        
+        
+        
     ////////////////////////////////////////////
          public int getSurfacedispo() {
         return surfacedispo;
